@@ -4,6 +4,7 @@ const context = canvas.getContext('2d');
 const btn = document.getElementById('wish');
 
 // https://idea19.netlify.app/img/bg_00001.png
+var imgs = [];
 
 function preloadImages(urls, allImagesLoadedCallback) {
   var loadedCounter = 0;
@@ -14,6 +15,7 @@ function preloadImages(urls, allImagesLoadedCallback) {
       console.log('Number of loaded images: ' + loadedCounter);
       if (loadedCounter == toBeLoadedNumber) {
         allImagesLoadedCallback();
+        console.log(imgs);
       }
     });
   });
@@ -21,11 +23,12 @@ function preloadImages(urls, allImagesLoadedCallback) {
     var img = new Image();
     img.onload = anImageLoadedCallback;
     img.src = url;
+    imgs.push(img);
   }
 }
 
 var imgreq = [];
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 445; i++) {
   imgreq.push(
     `https://idea19.netlify.app/img/bg_${i.toString().padStart(5, '0')}.png`
   );
@@ -37,8 +40,7 @@ preloadImages(imgreq, function () {
 });
 
 const frameCount = 420;
-const currentFrame = (index) =>
-  `https://idea19.netlify.app/img/bg_${index.toString().padStart(5, '0')}.png`;
+const currentFrame = (index) => imgs[index].src;
 
 const img = new Image();
 img.src = currentFrame(1);
