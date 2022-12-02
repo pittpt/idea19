@@ -1,0 +1,49 @@
+html {
+  height: 100vh;
+}
+
+body {
+  height: 2000vh;
+  width: 100%;
+  justify-content: center;
+  background-color: #fff3f6;
+}
+
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#copyExample {
+  color: white;
+  position: sticky;
+  top: 0;
+  font-size: 50px;
+}
+
+#wish {
+  position: sticky;
+  top: 65%;
+  border: none;
+  background-color: #c23e7c;
+  color: white;
+  padding: 10px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  left: 12%;
+  opacity: 0;
+}
+
+#card {
+  position: fixed;
+  width: 100%;
+  margin-left: -8px;
+}
