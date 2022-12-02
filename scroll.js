@@ -28,7 +28,7 @@ function preloadImages(urls, allImagesLoadedCallback) {
 }
 
 var imgreq = [];
-for (let i = 0; i < 445; i++) {
+for (let i = 0; i < 1; i++) {
   imgreq.push(
     `https://idea19.netlify.app/img/bg_${i.toString().padStart(5, '0')}.png`
   );
@@ -40,12 +40,13 @@ preloadImages(imgreq, function () {
 });
 
 const frameCount = 420;
-const currentFrame = (index) => imgs[index].src;
+const currentFrame = (index) =>
+  `/img2/bg_${index.toString().padStart(5, '0')}.png`;
 
 const img = new Image();
 img.src = currentFrame(1);
-canvas.width = 1080;
-canvas.height = 1920;
+canvas.width = 270;
+canvas.height = 480;
 img.onload = function () {
   context.drawImage(img, 0, 0);
 };
