@@ -48,3 +48,8 @@ canvas {
   margin-left: -8px;
   height: auto;
 }
+
+#loading {
+  position: sticky;
+  top: 0;
+}
