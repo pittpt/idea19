@@ -38,7 +38,7 @@ preloadImages(imgreq, function () {
 
 const frameCount = 420;
 const currentFrame = (index) =>
-  `/img/bg_${index.toString().padStart(5, '0')}.png`;
+  `https://idea19.netlify.app/img/bg_${index.toString().padStart(5, '0')}.png`;
 
 const img = new Image();
 img.src = currentFrame(1);
