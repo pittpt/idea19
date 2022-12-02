@@ -46,4 +46,5 @@ canvas {
   position: fixed;
   width: 100%;
   margin-left: -8px;
+  height: auto;
 }
