@@ -3,7 +3,7 @@ const canvas = document.getElementById('scrollAnimation');
 const context = canvas.getContext('2d');
 const btn = document.getElementById('wish');
 
-// https://idea19.netlify.app/img/bg_00033.png
+// https://idea19.netlify.app/img/bg_00001.png
 
 function preloadImages(urls, allImagesLoadedCallback) {
   var loadedCounter = 0;
@@ -24,8 +24,15 @@ function preloadImages(urls, allImagesLoadedCallback) {
   }
 }
 
+var imgreq = [];
+for (let i = 0; i < 50; i++) {
+  imgreq.push(
+    `https://idea19.netlify.app/img/bg_${i.toString().padStart(5, '0')}.png`
+  );
+}
+
 // Let's call it:
-preloadImages('https://idea19.netlify.app/img', function () {
+preloadImages(imgreq, function () {
   console.log('All images were loaded');
 });
 
